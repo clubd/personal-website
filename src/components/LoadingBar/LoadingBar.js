@@ -1,10 +1,11 @@
 import { progress } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import "./LoadingBar.scss";
 
 
-function LoadingBar() => {
+function LoadingBar () {
     const [fill, setFill] = useState(0);
-    const [loading, isLoading] = useState(false);
+    
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -20,8 +21,8 @@ function LoadingBar() => {
 
     return (
         <div className="loading__container">
-            <div className="loading__bar" style={{ width: `${progress}%` }}></div>
-            <div className="loadin__text">{progress}%</div>
+            <div className="loading__bar" style={{ width: `${fill}%` }}></div>
+            <div className="loadin__text">{fill}%</div>
         </div>
         )
 }
