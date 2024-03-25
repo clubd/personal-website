@@ -15,12 +15,13 @@ function LoadingBar() => {
                 return previousFill + 1;
             });
         }, 20);
+        return () => clearInterval(interval);
     },[]);
 
     return (
-        <div className="loading-container">
-            <div className="loading-bar" style={{ width: `${progress}%` }}></div>
-            <div className="loading-text">{progress}%</div>
+        <div className="loading__container">
+            <div className="loading__bar" style={{ width: `${progress}%` }}></div>
+            <div className="loadin__text">{progress}%</div>
         </div>
         )
 }
