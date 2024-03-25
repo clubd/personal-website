@@ -1,3 +1,4 @@
+import { progress } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 
@@ -17,9 +18,10 @@ function LoadingBar() => {
     },[]);
 
     return (
-        <>
-        <div className="loading-container"
-        </>
+        <div className="loading-container">
+            <div className="loading-bar" style={{ width: `${progress}%` }}></div>
+            <div className="loading-text">{progress}%</div>
+        </div>
         )
 }
 
