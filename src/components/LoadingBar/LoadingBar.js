@@ -10,15 +10,16 @@ function LoadingBar () {
     useEffect(() => {
         const interval = setInterval(() => {
             setFill((previousFill) => {
-                if (previousFill === 100) {
+                if (previousFill >= 100) {
                     clearInterval(interval);
+                    return 100;
                 }
                 return previousFill + 1;
             });
-        }, 20);
+        }, 30);
         return () => clearInterval(interval);
     },[]);
-
+    
     return (
         <div className="loading__container">
             <div className="loading__bar" style={{ width: `${fill}%` }}></div>
